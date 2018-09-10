@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './top-nav.css'
 
 class TopNav extends Component {
@@ -6,6 +7,8 @@ class TopNav extends Component {
     return (
       <div className="top-nav">
         <p>MAINTENANCEone</p>
+        <Link to='/'>Home</Link>
+        <Link to='/product'>Product</Link>
       </div>
     );
   }
