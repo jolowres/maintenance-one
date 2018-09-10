@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import TopNav from './top-nav/top-nav'
+import Main from './main/main'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <TopNav></TopNav>
-
-      </div>
-    );
-  }
-}
-
+const App = () => (
+  <div>
+    <TopNav></TopNav>
+    <Main></Main>
+  </div>
+)
 export default App;
