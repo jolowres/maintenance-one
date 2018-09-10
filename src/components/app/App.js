@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import TopNav from './top-nav/top-nav'
-import Main from './main/main'
+import TopNav from '../top-nav/top-nav'
+import Main from '../main/main'
 
 const App = () => (
   <div>
