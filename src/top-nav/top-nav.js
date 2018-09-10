@@ -5,7 +5,7 @@ class TopNav extends Component {
   render() {
     return (
       <div className="top-nav">
-        <p className="top-nav__text">MAINTENANCE ONE</p>
+        <p>MAINTENANCEone</p>
       </div>
     );
   }
