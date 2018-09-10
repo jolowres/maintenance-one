@@ -6,8 +6,8 @@ import Product from '../product/product'
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route path='/product' component={Product}/>      
+      <Route exact path="/" component={  Home }/>
+      <Route path='/product' component={ Product }/>      
     </Switch>
   </main>
 )
