@@ -5,7 +5,7 @@ import {
   RECEIVE_PRODUCT
 } from '../actions/procuct.actions'
 
-function product(
+function product (
   state = {
     isFetching: false,
     product: {}

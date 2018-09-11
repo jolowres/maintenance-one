@@ -13,7 +13,7 @@ function requestProduct(product) {
 function receiveProduct(product, json) {
   return {
     type: RECEIVE_PRODUCT,
-    product: json.data,
+    product: json,
     receivedAt: Date.now()
   }
 }

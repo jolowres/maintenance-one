@@ -3,29 +3,29 @@ import { connect } from 'react-redux'
 import { fetchProduct } from '../../actions/procuct.actions'
 
 class Product extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
-  componentDidMount() {
+  componentDidMount() {     
     const { dispatch, product } = this.props
     dispatch(fetchProduct(product))
   }
 
   render() {
-    const { product } = this.props
     return (
       <div className="product">
         <p>This is the product page</p>
+        <div>--{this.props.product.productCode}--</div>
+        <div>--{this.props.product.name}--</div>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  const { product } = state
   return {
-    product
+    product: state.product.product
   }
 }
 
