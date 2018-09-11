@@ -21,7 +21,7 @@ function receiveProduct(product, json) {
 export function fetchProduct(product) {
   return dispatch => {
     dispatch(requestProduct(product))
-    return fetch('url--here/product')
+    return fetch('https://p2p.simplyhealth.co.uk/product/cash-plan')
       .then(response => response.json())
       .then(json => dispatch(receiveProduct(product, json)))
   }
