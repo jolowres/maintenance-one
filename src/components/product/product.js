@@ -10,8 +10,10 @@ class Product extends Component {
           <form>
             <div className="row">
               <div className="col">
-                  <label htmlFor="name">Product name</label>
-                  <input className="form-control" id="name" value={this.props.product.name} onChange={this.props.onChange}/>
+                <label htmlFor="name">Product name</label>
+                <input className="form-control" 
+                  id="name" value={this.props.product.name} 
+                  onChange={this.props.onChange}/>
               </div>
               <div className="col">
                 <label htmlFor="productCode">Product code</label>
@@ -19,6 +21,13 @@ class Product extends Component {
                   id="productCode" 
                   value={this.props.product.productCode}
                   onChange={this.props.onChange}/>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <input type="submit" 
+                  className="btn btn-primary"
+                  onClick={this.props.onSave}/>
               </div>
             </div>
           </form>

@@ -6,6 +6,9 @@ import Product from '../components/product/product'
 class ProductContainer extends Component {
   constructor(props) {
     super(props);
+    this.updateProductState = this.updateProductState.bind(this)
+    this.saveProduct = this.saveProduct.bind(this)
+
     this.state = {
       product: this.props.product.product
     };
@@ -21,7 +24,7 @@ class ProductContainer extends Component {
   }
 
   updateProductState(event) {
-    const field = event.target.name;
+    const field = event.target.id;
     const product = this.state.product;
     product[field] = event.target.value;
     return this.setState({product: product});
@@ -29,13 +32,13 @@ class ProductContainer extends Component {
 
   saveProduct(event) {
     event.preventDefault();
-    console.log('saveing --->')
+    console.log('saving --->')
     console.log(this.state.product);
     //TO DO dispatch save
   }
 
   render() {
-    return (
+    return (      
       <Product 
         product={this.state.product}
         onChange={this.updateProductState}
