@@ -3,9 +3,6 @@ import React, { Component } from 'react'
 class Product extends Component {
 
   render () {
-    console.log('----->')
-    console.log(this.props)
-    console.log('<-----')
     if (this.props.product) {
       return (
         <div>             
@@ -13,12 +10,15 @@ class Product extends Component {
           <form>
             <div className="row">
               <div className="col">
-                  <label htmlFor="product-name">Product name</label>
-                  <input className="form-control" id="product-name" value={this.props.product.name}/>
+                  <label htmlFor="name">Product name</label>
+                  <input className="form-control" id="name" value={this.props.product.name} onChange={this.props.onChange}/>
               </div>
               <div className="col">
-                <label htmlFor="product-code">Product code</label>
-                {/* <input className="form-c      ontrol" id="product-code" value={props.product.productCode}/> */}
+                <label htmlFor="productCode">Product code</label>
+                <input className="form-control" 
+                  id="productCode" 
+                  value={this.props.product.productCode}
+                  onChange={this.props.onChange}/>
               </div>
             </div>
           </form>
