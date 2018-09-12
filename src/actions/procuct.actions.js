@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch'
+import axios from 'axios'
 
 export const REQUEST_PRODUCT = 'REQUEST_PRODUCT'
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'
@@ -21,9 +21,10 @@ function receiveProduct(product, json) {
 export function fetchProduct(product) {
   return dispatch => {
     dispatch(requestProduct(product))
-    return fetch('https://p2p.simplyhealth.co.uk/product/cash-plan')
-      .then(response => response.json())
-      .then(json => dispatch(receiveProduct(product, json)))
+    return axios.get('https://p2p.simplyhealth.co.uk/product/cash-plan')
+      .then((response) => {
+        dispatch(receiveProduct(product, response.data))
+      })
   }
 }
 
