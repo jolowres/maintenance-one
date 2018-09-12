@@ -8,7 +8,7 @@ class Product extends Component {
         <div>             
           <h2>Product details</h2>
           <form>
-            <div className="row">
+            <div className="form-group row">
               <div className="col">
                 <label htmlFor="name">Product name</label>
                 <input className="form-control" 
@@ -23,7 +23,7 @@ class Product extends Component {
                   onChange={this.props.onChange}/>
               </div>
             </div>
-            <div className="row">
+            <div className="form-group row">
               <div className="col">
                 <input type="submit" 
                   className="btn btn-primary"

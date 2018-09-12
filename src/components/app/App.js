@@ -6,7 +6,9 @@ import Main from '../main/main'
 const App = () => (
   <div>
     <TopNav></TopNav>
-    <Main></Main>
+    <div className="container">
+      <Main></Main>
+    </div>
   </div>
 )
 export default App;
