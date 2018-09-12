@@ -1,13 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from '../home/home'
-import Product from '../product/product'
+import ProductContainer from '../../containers/product-container'
 
 const Main = () => (
   <main>
     <Switch>
       <Route exact path="/" component={  Home }/>
-      <Route path='/product' component={ Product }/>      
+      <Route path='/product' component={ ProductContainer }/>      
     </Switch>
   </main>
 )
