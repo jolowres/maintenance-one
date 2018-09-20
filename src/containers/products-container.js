@@ -22,16 +22,26 @@ class ProductsContainer extends Component {
 
   render () {
     if (this.state.products) {
-      console.log('----->')
-      console.log(this.state.products[0].productCode)
-      console.log('<----')
-    return (
-      <div>Hello</div>
-      // <div>{this.state.products[0]}</div>
-    )
-    } else {
-      return null
-    }
+     
+      const productListItem = this.state.products.map((product) => 
+        <div key={product.productCode}>
+          <span>
+            {product.productCode}
+          </span>
+          <span>
+            {product.name}
+          </span>
+        </div>
+      )
+
+      return (
+        <div>{productListItem}</div>
+      )
+      } else {
+        return (
+          <div>Loading...</div>
+        )
+      }
   }
 }
 
