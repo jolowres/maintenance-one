@@ -29,7 +29,7 @@ function updateProductSuccess(product) {
 export function fetchProduct(product) {
   return dispatch => {
     dispatch(requestProduct(product))
-    return axios.get('https://p2p.simplyhealth.co.uk/product/cash-plan')
+    return axios.get('http://localhost:4000/product')
       .then((response) => {
         dispatch(receiveProduct(product, response.data))
       })
@@ -41,7 +41,7 @@ export function fetchProduct(product) {
 
 export function updateProduct(product) {
   return dispatch => {
-    return axios.post('/updateApi', { product: product })
+    return axios.post('http://localhost:4000/product', { product: product })
       .then((response) => {
         dispatch(updateProductSuccess(product, response.data))
       })
