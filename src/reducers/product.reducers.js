@@ -7,7 +7,7 @@ import {
 
 function product (
   state = {
-    isFetching: false,
+    isFetching: false,      
     product: {}
   },
   action

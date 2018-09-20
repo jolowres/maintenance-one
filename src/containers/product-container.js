@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchProduct } from '../actions/procuct.actions'
+import { bindActionCreators } from 'redux'
+import * as productActions from '../actions/procuct.actions'
 import Product from '../components/product/product'
 
 class ProductContainer extends Component {
@@ -15,8 +16,7 @@ class ProductContainer extends Component {
   }
 
   componentDidMount() {     
-    const { dispatch, product } = this.props;
-    dispatch(fetchProduct(product));
+    this.props.actions.fetchProduct()
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,9 +32,7 @@ class ProductContainer extends Component {
 
   saveProduct(event) {
     event.preventDefault();
-    console.log('saving --->')
-    console.log(this.state.product);
-    //TO DO dispatch save
+    this.props.actions.updateProduct(this.state.product)
   }
 
   render() {
@@ -54,4 +52,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ProductContainer)
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(productActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)
