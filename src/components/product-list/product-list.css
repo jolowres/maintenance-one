@@ -1,0 +1,8 @@
+.header {
+  font-weight: bold;
+  padding: 1rem 0;
+  border-bottom: 2px solid darkblue;
+}
+.data-row {
+  padding: 0.25rem;
+}

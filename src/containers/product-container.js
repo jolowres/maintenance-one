@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as productActions from '../actions/procuct.actions'
+import * as productActions from '../actions/product.actions'
 import Product from '../components/product/product'
 
 class ProductContainer extends Component {
