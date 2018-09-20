@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as productsActions from '../actions/products.actions'
+import ProductList from '../components/product-list/product-list'
 
 class ProductsContainer extends Component {
   constructor (props) {
@@ -21,27 +22,9 @@ class ProductsContainer extends Component {
   }
 
   render () {
-    if (this.state.products) {
-     
-      const productListItem = this.state.products.map((product) => 
-        <div key={product.productCode}>
-          <span>
-            {product.productCode}
-          </span>
-          <span>
-            {product.name}
-          </span>
-        </div>
-      )
-
-      return (
-        <div>{productListItem}</div>
-      )
-      } else {
-        return (
-          <div>Loading...</div>
-        )
-      }
+    return (
+      <ProductList products={this.state.products}></ProductList>
+    )
   }
 }
 
