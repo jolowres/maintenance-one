@@ -32,12 +32,7 @@ class ProductContainer extends Component {
 
   saveProduct(event) {
     event.preventDefault();
-    console.log('saving --->')
-    console.log(this.state.product);
     this.props.actions.updateProduct(this.state.product)
-    // const { dispatch }
-    // dispatch(updateProduct(this.state.product))
-    //TO DO dispatch save
   }
 
   render() {
