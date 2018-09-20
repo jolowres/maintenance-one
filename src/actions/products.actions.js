@@ -19,7 +19,7 @@ function receiveProducts(json) {
 
 export function fetchProducts() {
   return dispatch => {
-    dispatch(requestProduct())
+    dispatch(requestProducts())
     return axios.get('http://localhost:4000/product')
       .then((response) => {
         dispatch(receiveProducts(response.data))

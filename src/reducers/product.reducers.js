@@ -1,13 +1,11 @@
-import { combineReducers } from 'redux'
-
 import {
   REQUEST_PRODUCT,
   RECEIVE_PRODUCT
-} from '../actions/procuct.actions'
+} from '../actions/product.actions'
 
 function product (
   state = {
-    isFetching: false,      
+    isFetching: false,
     product: {}
   },
   action
@@ -28,8 +26,4 @@ function product (
   }
 }
 
-const rootReducer = combineReducers({
-  product
-})
-
-export default rootReducer
+export default product
