@@ -5,7 +5,7 @@ class Product extends Component {
   render () {
     if (this.props.product) {
       return (
-        <div>             
+        <div data-testid="productDetails">             
           <h2>Product details</h2>
           <form>
             <div className="form-group row">
@@ -35,7 +35,7 @@ class Product extends Component {
       )
     } else {
       return (
-        <span>Loading...</span>
+        <span data-testid="loading">Loading...</span>
       )
     }
   }
