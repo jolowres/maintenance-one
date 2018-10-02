@@ -48,4 +48,20 @@ describe('product-container', () => {
       expect(instance.setState).toHaveBeenCalledWith({"product": {"name": "new-value"}})
     })
   })
+
+  describe('componentDidMount', () => {
+    it('should call fetchProduct', () => {
+      jest.spyOn(instance.props.actions, 'fetchProduct')
+      instance.componentDidMount()
+      expect(instance.props.actions.fetchProduct).toHaveBeenCalled()
+    })
+  })
+
+  describe('componentWillReceiveProps', () => {
+    it('should call setState', () => {
+      jest.spyOn(instance, 'setState')
+      instance.componentWillReceiveProps({product: 'test'})
+      expect(instance.setState).toHaveBeenCalledWith({product: 'test'})
+    })
+  })
 })
