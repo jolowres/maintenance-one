@@ -14,7 +14,7 @@ class ProductList extends Component {
         </div>
       )
       return (
-        <div>
+        <div className="productList">
           <div className="row header">
             <div className="col-2">Code</div>
             <div className="col-9">Name   </div>
@@ -25,7 +25,7 @@ class ProductList extends Component {
       )
     } else {
       return (
-        <div>Loading...       </div>
+        <div className="loading">Loading...</div>
       )
     }
   }
