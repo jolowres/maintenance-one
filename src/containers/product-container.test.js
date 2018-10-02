@@ -15,9 +15,12 @@ describe('product-container', () => {
   beforeEach(() => {
     initialState = {
       product: {
-        product: {product: {
-          name: 'test'
-        }}
+        product: {
+          product: 
+          {
+            name: 'test'
+          }
+        }
       }
     }
     store = mockStore(initialState)
