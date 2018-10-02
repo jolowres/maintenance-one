@@ -1,11 +1,7 @@
 import React from 'react'
 import ProductsContainer from './products-container'
-import { configure, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import configureMockStore from 'redux-mock-store'
-
-// TODO move to test setup
-import Adapter from 'enzyme-adapter-react-16'
-configure({ adapter: new Adapter() });
 
 const mockStore = configureMockStore()
 

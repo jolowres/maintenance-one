@@ -1,11 +1,6 @@
 import React from 'react'
 import ProductList from './product-list'
-import { configure, shallow } from 'enzyme'
-
-// TODO move to test setup
-import Adapter from 'enzyme-adapter-react-16'
-configure({ adapter: new Adapter() });
-
+import { shallow } from 'enzyme'
 
 describe('product-list', () => {
   let wrapper, products
