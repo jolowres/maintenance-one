@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 const mockStore = configureMockStore()
 
 describe('product-container', () => {
-  let wrapper, store, initialState
+  let wrapper, store, initialState, instance
 
   beforeEach(() => {
     initialState = {
@@ -22,11 +22,15 @@ describe('product-container', () => {
     }
     store = mockStore(initialState)
     store.dispatch = jest.fn()
-    store.state = 
     wrapper = shallow(<ProductContainer store={store}/>)
+    instance = wrapper.dive().instance()
   })
 
-  it('should do stuff', () => {
-    expect(1).toEqual(1)
+  it('should call updateProduct action when save product is called', () => {
+    jest.spyOn(instance.props.actions, 'updateProduct')
+    instance.saveProduct({
+      preventDefault: jest.fn()
+    })
+    expect(instance.props.actions.updateProduct).toHaveBeenCalled()
   })
 })
