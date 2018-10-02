@@ -15,9 +15,9 @@ describe('product-container', () => {
   beforeEach(() => {
     initialState = {
       product: {
-        product: {
+        product: {product: {
           name: 'test'
-        }
+        }}
       }
     }
     store = mockStore(initialState)
@@ -26,11 +26,26 @@ describe('product-container', () => {
     instance = wrapper.dive().instance()
   })
 
-  it('should call updateProduct action when save product is called', () => {
-    jest.spyOn(instance.props.actions, 'updateProduct')
-    instance.saveProduct({
-      preventDefault: jest.fn()
+  describe('saveProduct', () => {
+    it('should call updateProduct action when save product is called', () => {
+      jest.spyOn(instance.props.actions, 'updateProduct')
+      instance.saveProduct({
+        preventDefault: jest.fn()
+      })
+      expect(instance.props.actions.updateProduct).toHaveBeenCalled()
     })
-    expect(instance.props.actions.updateProduct).toHaveBeenCalled()
+  })
+
+  describe('updateProductState', () => {
+    it('should update product', () => {
+      jest.spyOn(instance, 'setState')
+      instance.updateProductState({
+        target: {
+          id: 'name',
+          value: 'new-value'
+        }
+      })
+      expect(instance.setState).toHaveBeenCalledWith({"product": {"name": "new-value"}})
+    })
   })
 })
