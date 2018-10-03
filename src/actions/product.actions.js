@@ -34,6 +34,7 @@ export function fetchProduct(product) {
         dispatch(receiveProduct(product, response.data))
       })
       .catch((error) => {
+        // TODO error handling
         console.log('error getting product', error)
       })
   }

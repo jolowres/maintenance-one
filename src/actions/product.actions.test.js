@@ -25,5 +25,18 @@ describe('product.actions', () => {
       })
     })
 
+    it('should error', () => {
+      expect.assertions(1)
+      axiosMock.onAny().reply(400, {
+        error: 'error'
+      })
+      const store = mockStore({product: ''})
+      return store.dispatch(actions.fetchProduct()).then((result) => {
+        console.log('result --------------->')
+        console.log(result)
+        expect(1).toEqual(1)
+      })
+    })
+
   })
 })
