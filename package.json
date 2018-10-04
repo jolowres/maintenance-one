@@ -39,7 +39,8 @@
       "!src/setupTests.js",
       "!src/registerServiceWorker.js",
       "!src/components/app/App.js",
-      "!src/components/main/main.js"
+      "!src/components/main/main.js",
+      "!src/reducers/index.js"
     ]
   }
 }
