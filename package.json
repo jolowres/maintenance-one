@@ -35,6 +35,7 @@
       "src/**/*.js",
       "!<rootDir>/node_modules/",
       "!src/index.js",
+      "!src/configureStore.js",
       "!src/setupTests.js",
       "!src/registerServiceWorker.js",
       "!src/components/app/App.js",
