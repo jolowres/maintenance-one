@@ -1,5 +1,3 @@
-
-
 import {
   REQUEST_PRODUCTS,
   RECEIVE_PRODUCTS

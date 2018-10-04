@@ -24,8 +24,5 @@ export function fetchProducts() {
       .then((response) => {
         dispatch(receiveProducts(response.data))
       })
-      .catch((error) => {
-        console.log('error getting product', error)
-      })
   }
 }
