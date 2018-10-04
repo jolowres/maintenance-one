@@ -24,19 +24,21 @@ describe('product.actions', () => {
         expect(myResult.product.name).toEqual('test')
       })
     })
+  })
 
-    it('should error', () => {
+  describe('updateProduct', () => {
+    it('should update product', () => {
       expect.assertions(1)
-      axiosMock.onAny().reply(400, {
-        error: 'error'
-      })
+      let mockProduct = {
+        name: 'test',
+        productCode: 'testCode'
+      }
+      axiosMock.onAny().reply(200, mockProduct)
       const store = mockStore({product: ''})
-      return store.dispatch(actions.fetchProduct()).then((result) => {
-        console.log('result --------------->')
-        console.log(result)
-        expect(1).toEqual(1)
+      return store.dispatch(actions.updateProduct(mockProduct)).then(() => {
+        let myResult = store.getActions().find(action => action.type == 'UPDATE_PRODUCT_SUCCESS')
+        expect(myResult.product.name).toEqual('test')
       })
     })
-
   })
 })

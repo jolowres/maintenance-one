@@ -33,10 +33,6 @@ export function fetchProduct(product) {
       .then((response) => {
         dispatch(receiveProduct(product, response.data))
       })
-      .catch((error) => {
-        // TODO error handling
-        console.log('error getting product', error)
-      })
   }
 }
 
@@ -45,9 +41,6 @@ export function updateProduct(product) {
     return axios.post('http://localhost:4000/product', { product: product })
       .then((response) => {
         dispatch(updateProductSuccess(product, response.data))
-      })
-      .catch((error) => {
-        console.log('error saving product. ', error)
       })
   }
 }
