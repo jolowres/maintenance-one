@@ -9,7 +9,10 @@ class ProductList extends Component {
           <div className="col-2">{product.productCode}</div>
           <div className="col-9">{product.name}</div>
           <div className="col-1">
-            <button className="btn btn-sm  btn-primary">Edit</button>
+            <button className="btn btn-sm  btn-primary"
+              onClick={() => this.props.getProduct(product.productCode)}>
+                Edit {product.productCode}
+            </button>
           </div>
         </div>
       )

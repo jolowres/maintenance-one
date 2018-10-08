@@ -11,7 +11,7 @@ function requestProduct(product) {
   }
 }
 
-function receiveProduct(product, json) {
+function receiveProduct(json) {
   return {
     type: RECEIVE_PRODUCT,
     product: json,
@@ -26,15 +26,16 @@ function updateProductSuccess(product) {
   }
 }
 
-export function fetchProduct(product) {
+export function fetchProduct(productCode) {
   return dispatch => {
-    dispatch(requestProduct(product))
-    return axios.get('http://localhost:4000/product')
+    dispatch(requestProduct(productCode))
+    return axios.get(`http://localhost:4000/product/${productCode}`)
       .then((response) => {
-        dispatch(receiveProduct(product, response.data))
+        dispatch(receiveProduct(response.data))
       })
   }
 }
+
 
 export function updateProduct(product) {
   return dispatch => {
