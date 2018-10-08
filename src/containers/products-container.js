@@ -11,8 +11,6 @@ class ProductsContainer extends Component {
     this.state = {
       products: this.props.products.products
     }
-
-    // this.getProduct = this.getProduct.bind(this)
   }
 
   componentDidMount () {
@@ -24,8 +22,7 @@ class ProductsContainer extends Component {
   }
 
   getProduct(productCode) {
-    console.log('function call --->>')
-    console.log(productCode)
+    // TODO implement if not using Link in product-list
   }
 
   render () {
