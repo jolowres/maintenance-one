@@ -14,7 +14,7 @@ class TopNav extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <div className="navbar-nav">
             <NavLink exact className="nav-item nav-link" activeClassName="active" to='/'>Home</NavLink>
-            <NavLink exact className="nav-item nav-link" activeClassName="active" to='/product'>Product</NavLink>
+            {/* <NavLink exact className="nav-item nav-link" activeClassName="active" to='/product'>Product</NavLink> */}
             <NavLink exact className="nav-item nav-link" activeClassName="active" to='/products'>Products</NavLink>
           </div>
         </div>
