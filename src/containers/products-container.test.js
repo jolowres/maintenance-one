@@ -35,4 +35,11 @@ describe('ProductsContainer', () => {
       expect(instance.setState).toHaveBeenCalledWith({products: 'test'})
     })
   })
+
+  describe('getProduct', () => {
+    it('should not do anything at the moment', () => {
+      instance.getProduct('product-code')
+      expect(1).toEqual(1)
+    })
+  })
 })

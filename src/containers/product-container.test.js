@@ -6,7 +6,7 @@ import configureMockStore from 'redux-mock-store'
 const mockStore = configureMockStore()
 
 describe('product-container', () => {
-  let wrapper, store, initialState, instance
+  let wrapper, store, match, initialState, instance
 
   beforeEach(() => {
     initialState = {
@@ -20,8 +20,14 @@ describe('product-container', () => {
       }
     }
     store = mockStore(initialState)
+    match = {
+      params: {
+        id: 1
+      }
+    }
+
     store.dispatch = jest.fn()
-    wrapper = shallow(<ProductContainer store={store}/>)
+    wrapper = shallow(<ProductContainer store={store} match={match}/>)
     instance = wrapper.dive().instance()
   })
 

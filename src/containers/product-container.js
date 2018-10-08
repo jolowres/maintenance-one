@@ -15,8 +15,8 @@ class ProductContainer extends Component {
     };
   }
 
-  componentDidMount() {     
-    this.props.actions.fetchProduct()
+  componentDidMount() {
+    this.props.actions.fetchProduct(this.props.match.params.id)
   }
 
   componentWillReceiveProps(nextProps) {

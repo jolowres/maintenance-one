@@ -21,9 +21,13 @@ class ProductsContainer extends Component {
     this.setState({products: nextProps.products});
   }
 
+  getProduct(productCode) {
+    // TODO implement if not using Link in product-list
+  }
+
   render () {
     return (
-      <ProductList products={this.state.products}></ProductList>
+      <ProductList products={this.state.products} getProduct={this.getProduct}></ProductList>
     )
   }
 }

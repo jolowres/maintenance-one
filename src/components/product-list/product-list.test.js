@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductList from './product-list'
+import { Link, MemoryRouter } from 'react-router-dom'
 import { shallow } from 'enzyme'
 
 describe('product-list', () => {
@@ -16,7 +17,7 @@ describe('product-list', () => {
       productCode: 'test-code',
       name: 'test-name'
     }]
-    wrapper = shallow(<ProductList products={products}/>)
+    wrapper = shallow(<MemoryRouter><ProductList products={products}/></MemoryRouter>)
     expect(wrapper.html('productList')).toEqual(expect.stringContaining('test-code'))
   })
 

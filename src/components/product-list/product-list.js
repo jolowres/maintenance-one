@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './product-list.css'
 
 class ProductList extends Component {
@@ -9,7 +10,13 @@ class ProductList extends Component {
           <div className="col-2">{product.productCode}</div>
           <div className="col-9">{product.name}</div>
           <div className="col-1">
-            <button className="btn btn-sm  btn-primary">Edit</button>
+            {/* <button className="btn btn-sm  btn-primary"
+              onClick={() => this.props.getProduct(product.productCode)}>
+                Edit {product.productCode}
+            </button> */}
+            <Link to={'/product/' + product.productCode} className="btn btn-sm  btn-primary">
+              Edit {product.productCode}
+            </Link>
           </div>
         </div>
       )

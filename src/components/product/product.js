@@ -27,6 +27,7 @@ class Product extends Component {
               <div className="col">
                 <input type="submit" 
                   className="btn btn-primary"
+                  value="Save Product"
                   onClick={this.props.onSave}/>
               </div>
             </div>
