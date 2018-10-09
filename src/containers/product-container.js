@@ -31,8 +31,10 @@ class ProductContainer extends Component {
   }
 
   saveProduct(event) {
-    event.preventDefault();
-    this.props.actions.updateProduct(this.state.product)
+    event.preventDefault()
+    return this.props.actions.updateProduct(this.state.product).then(() => {
+      this.props.history.push('/products')
+    })
   }
 
   render() {
