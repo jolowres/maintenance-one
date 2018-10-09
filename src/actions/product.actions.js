@@ -29,7 +29,7 @@ function updateProductSuccess(product) {
 export function fetchProduct(productCode) {
   return dispatch => {
     dispatch(requestProduct(productCode))
-    return axios.get(`http://localhost:4000/product/${productCode}`)
+    return axios.get(`http://localhost:4000/product-not-cached/${productCode}`)
       .then((response) => {
         dispatch(receiveProduct(response.data))
       })
