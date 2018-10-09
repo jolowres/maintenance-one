@@ -18,7 +18,7 @@ class ProductsContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({products: nextProps.products});
+    this.setState({products: nextProps.products})
   }
 
   getProduct(productCode) {
