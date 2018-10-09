@@ -20,7 +20,7 @@ function receiveProducts(json) {
 export function fetchProducts() {
   return dispatch => {
     dispatch(requestProducts())
-    return axios.get('http://localhost:4000/product')
+    return axios.get('http://localhost:4000/product-not-cached')
       .then((response) => {
         dispatch(receiveProducts(response.data))
       })
