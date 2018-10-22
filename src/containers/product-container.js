@@ -59,6 +59,7 @@ class ProductContainer extends Component {
             premiums={this.state.product.premiums}
             onChange={this.updatePremiumState}>
           </Premium>  
+          {/* TO DO - move save button to here */}
         </div>         
       )
     } else {
