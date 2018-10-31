@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'          
 
 class Product extends Component {
 
@@ -21,14 +21,6 @@ class Product extends Component {
                   id="productCode" 
                   value={this.props.product.productCode}
                   onChange={this.props.onChange}/>
-              </div>
-            </div>
-            <div className="form-group row">
-              <div className="col">
-                <input type="submit" 
-                  className="btn btn-primary"
-                  value="Save Product"
-                  onClick={this.props.onSave}/>
               </div>
             </div>
           </form>
