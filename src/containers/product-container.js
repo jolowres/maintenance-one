@@ -59,7 +59,10 @@ class ProductContainer extends Component {
             premiums={this.state.product.premiums}
             onChange={this.updatePremiumState}>
           </Premium>  
-          {/* TO DO - move save button to here */}
+          <input type="submit" 
+                  className="btn btn-primary"
+                  value="Save Product"
+                  onClick={this.saveProduct}/>
         </div>         
       )
     } else {

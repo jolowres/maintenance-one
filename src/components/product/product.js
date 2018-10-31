@@ -23,14 +23,6 @@ class Product extends Component {
                   onChange={this.props.onChange}/>
               </div>
             </div>
-            <div className="form-group row">
-              <div className="col">
-                <input type="submit" 
-                  className="btn btn-primary"
-                  value="Save Product"
-                  onClick={this.props.onSave}/>
-              </div>
-            </div>
           </form>
         </div>
       )

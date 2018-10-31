@@ -4,9 +4,9 @@ class Premium extends Component {
   render () {
     if (this.props.premiums) {
       const premiumList = this.props.premiums.map((premium, index) => 
-        <div className="row" key={index}>
-          <div className="col-2">{index + 1}</div>
-          <input className="form-control" 
+        <div className="row align-items-center      " key={index}>
+          <label className="col-1" for={index}>{index + 1}</label>
+          <input className="col-2 form-control" 
             id={index} value={premium} 
             onChange={this.props.onChange}/>
         </div>
@@ -14,7 +14,7 @@ class Premium extends Component {
       return (
         <div>
           <h3>Premiums</h3>
-          <div>{premiumList}</div>
+          <div className="form-group">{premiumList}</div>
         </div>
       )
     } else {
