@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import * as productActions from '../actions/product.actions'
 import Product from '../components/product/product'
 import Premium from '../components/premium/premium'
+import Benefits from '../components/benefits/benefits'
 
 class ProductContainer extends Component {
   constructor(props) {
@@ -59,6 +60,9 @@ class ProductContainer extends Component {
             premiums={this.state.product.premiums}
             onChange={this.updatePremiumState}>
           </Premium>  
+          <Benefits 
+            benefits={this.state.product.benefits}>
+          </Benefits>
           <input type="submit" 
                   className="btn btn-primary"
                   value="Save Product"
