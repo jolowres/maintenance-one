@@ -12,7 +12,7 @@ class Premium extends Component {
         </div>
       )
       return (
-        <div>
+        <div data-testid="premiums">
           <h3>Premiums</h3>
           <div className="form-group">{premiumList}</div>
         </div>

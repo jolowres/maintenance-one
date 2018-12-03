@@ -17,6 +17,7 @@ describe('benefits', () => {
     />);
     expect(getByTestId('benefits')).toBeInTheDocument();
   })
+
   it('should render loading when benefits is null', () => {
     const benefits = null
     const mockOnSelectBenefit = function () {}
