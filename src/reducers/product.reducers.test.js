@@ -1,7 +1,8 @@
 import reducer from './product.reducers'
 import {
   REQUEST_PRODUCT,
-  RECEIVE_PRODUCT
+  RECEIVE_PRODUCT,
+  SET_SELECTED_BENEFIT
 } from '../actions/product.actions'
 
 describe('product reducer', () => {
@@ -30,6 +31,18 @@ describe('product reducer', () => {
       }
     })
     expect(result.product.name).toBe('test')
+  })
+
+  it('should return modified state for SET_SELECTED_BENEFIT', () => {
+    var result = reducer({
+      selectedBenefit: {}
+    }, { 
+      type: SET_SELECTED_BENEFIT,
+      benefit: {
+        name: 'test'
+      }
+    })
+    expect(result.selectedBenefit.name).toBe('test')
   })
 
   it('should return default state if no state passed in', () => {
