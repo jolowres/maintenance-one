@@ -3,6 +3,7 @@ import axios from 'axios'
 export const REQUEST_PRODUCT = 'REQUEST_PRODUCT'
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'
 export const UPDATE_PRODUCT_SUCCESS = 'UPDATE_PRODUCT_SUCCESS'
+export const SET_SELECTED_BENEFIT = 'SET_SELECTED_BENEFIT'
 
 function requestProduct(product) {
   return {
@@ -23,6 +24,13 @@ function updateProductSuccess(product) {
   return {
     type: UPDATE_PRODUCT_SUCCESS,
     product
+  }
+}
+
+export function setSelectedBenefit(benefit) {
+  return {
+    type: SET_SELECTED_BENEFIT,
+    benefit
   }
 }
 

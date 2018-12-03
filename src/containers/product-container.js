@@ -12,6 +12,7 @@ class ProductContainer extends Component {
     this.updateProductState = this.updateProductState.bind(this)
     this.updatePremiumState = this.updatePremiumState.bind(this)
     this.saveProduct = this.saveProduct.bind(this)
+    this.setSelectedBenefit = this.setSelectedBenefit.bind(this)
     this.state = {
       product: this.props.product.product
     };
@@ -47,6 +48,10 @@ class ProductContainer extends Component {
     })
   }
 
+  setSelectedBenefit(benefit, e) {
+    return this.props.actions.setSelectedBenefit(benefit)
+  }
+
   render() {
     if(this.state.product) {
       return (
@@ -61,7 +66,8 @@ class ProductContainer extends Component {
             onChange={this.updatePremiumState}>
           </Premium>  
           <Benefits 
-            benefits={this.state.product.benefits}>
+            benefits={this.state.product.benefits}
+            onSelectBenefit={this.setSelectedBenefit}>
           </Benefits>
           <input type="submit" 
                   className="btn btn-primary"

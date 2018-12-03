@@ -2,20 +2,12 @@ import React, { Component } from 'react'
 import './benefits.css';
 
 class Benefits extends Component {
-  constructor(props) {
-    super(props)
-
-    this.doSomething = this.doSomething.bind(this)
-  }
-
-  doSomething() {
-    console.log('runnung')
-  }
 
   render () {
     if (this.props.benefits) {
       const benefitList = this.props.benefits.map((benefit, index) => 
-         <button key={'button' + index} className="btn btn-secondary" onClick={this.doSomething}>{benefit.name}</button>
+         <button key={'button' + index} className="btn btn-secondary" 
+         onClick={this.props.onSelectBenefit.bind(this, benefit)}>{benefit.name}</button>
       )
       return (
         <div>
