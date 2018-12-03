@@ -41,4 +41,13 @@
       })
     })
   })
+
+  describe('setSelectedBenefit', () => {
+    it('should return selected benefit', () => {
+      let mockBenefit = 'test'
+      const store = mockStore({selectedBenefit: ''})
+      let result = store.dispatch(actions.setSelectedBenefit(mockBenefit))
+      expect(result.benefit).toEqual('test')
+    })
+  })
 })

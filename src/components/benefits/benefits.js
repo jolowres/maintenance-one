@@ -10,7 +10,7 @@ class Benefits extends Component {
          onClick={this.props.onSelectBenefit.bind(this, benefit)}>{benefit.name}</button>
       )
       return (
-        <div>
+        <div data-testid="benefits">
           <h3>Benefits</h3>
           <div className="buttons form-group">{benefitList}</div>
         </div>
