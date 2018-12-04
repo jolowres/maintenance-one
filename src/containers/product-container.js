@@ -55,7 +55,7 @@ class ProductContainer extends Component {
   render() {
     if(this.state.product) {
       return (
-        <div>      
+        <div className="productContainer">      
           <Product 
             product={this.state.product}
             onChange={this.updateProductState}
@@ -77,7 +77,7 @@ class ProductContainer extends Component {
       )
     } else {
       return (
-        <div>Loading product...</div>
+        <div className="loading">Loading product...</div>
       )
     }
 
