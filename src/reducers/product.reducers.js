@@ -1,12 +1,14 @@
 import {
   REQUEST_PRODUCT,
-  RECEIVE_PRODUCT
+  RECEIVE_PRODUCT,
+  SET_SELECTED_BENEFIT
 } from '../actions/product.actions'
 
 function product (
   state = {
     isFetching: false,
-    product: {}
+    product: {},
+    selectedBenefit: {}
   },
   action
 ) {
@@ -21,6 +23,10 @@ function product (
         product: action.product,
         lastUpdated: action.receivedAt
       });
+    case SET_SELECTED_BENEFIT:
+      return Object.assign({}, state, {
+        selectedBenefit: action.benefit
+      })
     default:
       return state;
   }
